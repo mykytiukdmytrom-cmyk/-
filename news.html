@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Микитюк Дмитро Михайлович">
+<title>Новини фірми</title>
+<style lang="uk" title="Стилі сторінки новин">
+  body { font-family: Georgia, serif; max-width: 800px; margin: 20px auto; background: #fffdf8; }
+  .news-block { border: 1px solid #ccc; padding: 10px 16px; margin-bottom: 16px; background: #fff; }
+  .headline { color: #7a1f3d; }
+  .old-info { color: gray; }
+  .hot { background: #ffe58a; }
+  .site-footer { text-align: center; color: #555; }
+  .pron { color: #7a1f3d; }
+  .wrap { margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<p id="nav" title="Навігація" lang="uk"><a href="index.html">Про автора</a> | <a href="firm.html">Про фірму</a> | <a href="firm_info.html">Детально про фірму</a> | <a href="news.html">Новини</a> | <a href="products.html">Асортимент</a></p>
+<hr>
+
+<h1>Новини ТОВ «Легкий Ковток»</h1>
+
+<div class="wrap" style="text-align:center">
+  <p>Клікніть на фігуру, щоб перейти до розділу:</p>
+  <img src="news_banner.svg" height="150" usemap="#menu" alt="Навігаційна карта">
+  <map id="mainmap" name="menu" title="Карта розділів" shape="rect" coords="0,0,600,150" tabindex="1" onblur="console.log('map blur')">
+    <area href="products.html" tabindex="2" target="_self" shape="rect" coords="20,20,200,130" accesskey="a" onfocus="console.log('Асортимент')" alt="Асортимент">
+    <area href="firm.html" tabindex="3" target="_self" shape="circle" coords="300,75,55" accesskey="f" onfocus="console.log('Про фірму')" alt="Про фірму">
+    <area href="firm_info.html" tabindex="4" target="_blank" shape="poly" coords="400,130,500,20,580,130" accesskey="c" onfocus="console.log('Контакти')" alt="Контакти">
+  </map>
+</div>
+
+<section class="news-block" style="border-left:6px solid #7a1f3d">
+  <h2 class="headline">Головні новини</h2>
+
+  <article class="item">
+    <h3>Нова колекція сидрів</h3>
+    <p>
+      <span id="date1" class="date">30.09.2026</span> — ми додамо до нашого асортименту
+      <mark lang="uk" class="hot">нові сидри</mark> з груш та вишні.
+      Вміст спирту не перевищує 5<sup style="color:#7a1f3d" lang="uk" id="sup1">%</sup> за об'ємом.
+      Приємна легка газованість забезпечується вуглекислим газом CO<sub id="sub1" style="color:gray">2</sub>.
+    </p>
+    <p>
+      Ціна на популярний сидр:
+      <del lang="uk" class="old-info" cite="products.html">55 грн</del> тепер лише
+      <mark lang="uk" class="hot">45 грн</mark>.
+    </p>
+    <p>
+      <img src="siderr" height="120" alt="Новинки сезону"> — фото нових напоїв. 
+      Перегляд координат кліку:
+      <a href="news.html"><img src="siderr" height="60" ismap alt="Клікабельне фото"></a>
+    </p>
+  </article>
+
+  <article class="item">
+    <h3>Напої з Японії</h3>
+    <p>
+      До нашого каталогу додано японський слабоалкогольний напій
+      <ruby id="ruby1">清酒<rt id="rt1" class="pron">сей-сю</rt></ruby>
+      (легке рисове вино), поставка — щомісяця.
+    </p>
+  </article>
+
+  <article class="item">
+    <h3>Логотип навиворіт</h3>
+    <p>
+      До Дня фірми ми підготували жартівливий напис: <bdo lang="uk" dir="rtl">Легкий Ковток</bdo>.
+    </p>
+  </article>
+</section>
+
+<section class="news-block" style="border-left:6px solid #e8b04a">
+  <h2 class="headline">Оголошення</h2>
+  <div class="ann" style="color:#333">
+    <p>Новий склад площею 1200 м<sup style="font-size:smaller" lang="uk" id="sup2">2</sup> відкрито у Чернівцях.</p>
+    <p>Доставка по місту — <span id="fast" class="hot">безкоштовна</span> від 500 грн.</p>
+  </div>
+</section>
+
+<hr>
+<footer style="font-size:14px" class="site-footer">
+  © 2026 ТОВ «Легкий Ковток». Автор сайту: Микитюк Дмитро Михайлович.
+</footer>
+</body>
+</html>
