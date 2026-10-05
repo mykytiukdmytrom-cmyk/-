@@ -1,0 +1,299 @@
+
+
+/*
+   1. СЕЛЕКТОРИ
+*/
+
+/* Селектор ідентифікатора (#id) */
+#main-title,
+#firm-title,
+#prod-title {
+  color: #7a1f3d;
+  text-align: center;
+}
+
+/* Селектор класу (.class) */
+.block {
+  background-color: #fffdf8;
+}
+
+/* Селектор сусідів (A + B) — стиль застосовується до елемента,
+   що йде ОДРАЗУ після попереднього на тому самому рівні */
+h2 + p {
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Контекстний селектор (селектор спадкоємців, A B) —
+   стиль застосовується до B всередині A, незалежно від глибини */
+.container .content p {
+  line-height: 150%;
+}
+
+/* Селектор атрибутів [attr] — елемент просто МАЄ цей атрибут */
+p[title] {
+  border-left: 3px solid #e8b04a;
+  padding-left: 8px;
+}
+
+/* Селектор атрибутів [attr~=value] — значення входить
+   у список слів атрибута, розділених пробілом */
+[class~="old"] {
+  color: gray;
+}
+
+/* Селектор атрибутів [attr*=value] — значення є підрядком
+   у будь-якому місці атрибута */
+[href*="firm"] {
+  font-weight: bold;
+}
+
+/*
+   2. ПСЕВДОКЛАСИ
+  */
+
+.list-demo li:first-child {
+  border-top: 2px dashed #7a1f3d;
+}
+
+.list-demo li:last-child {
+  border-bottom: 2px dashed #7a1f3d;
+}
+
+/* :last-of-type — останній елемент свого типу серед сусідів */
+.content p:last-of-type {
+  font-weight: bold;
+}
+
+/* :empty — елемент без вмісту (і без тексту, і без дочірніх тегів) */
+.list-demo li:empty {
+  display: none;
+}
+
+/* Поле форми доступне для введення */
+input:enabled {
+  background-color: #fff;
+  border-color: #6b8e23;
+}
+
+/* Поле форми, значення якого не проходить валідацію */
+input:invalid {
+  border-color: #c0392b;
+  border-style: dashed;
+}
+
+/* Відвідане посилання */
+a:visited {
+  color: #8e44ad;
+}
+
+/*
+   3. ПСЕВДОЕЛЕМЕНТИ */
+
+/* ::first-line — стилізує лише перший видимий рядок тексту */
+.content p::first-line {
+  font-variant: small-caps;
+}
+
+/* ::selection — вигляд тексту, виділеного мишею */
+::selection {
+  background-color: #e8b04a;
+  color: #fff;
+}
+
+/* !important — правило застосується попри будь-яку іншу
+   вказівку з нижчим пріоритетом */
+.force-color {
+  color: red !important;
+}
+
+/*
+   4. РАМКИ, ЗАПОВНЮВАЧІ Й БОРДЮРИ (margin / padding / border)
+*/
+
+.container {
+  margin-left: 5%;
+  margin-right: 50%;
+  margin-top: 16px;
+}
+
+.content {
+  padding: 12px;
+  padding-top: 2%;
+  padding-left: 16px;
+
+  border-width: thin;
+  border-right-width: 2px;
+  border-bottom-width: thin;
+
+  border-top-color: #7a1f3d;
+  border-bottom-color: #e8b04a;
+  border-left-color: #6b8e23;
+
+  border-top-style: dotted;
+  border-left-style: groove;
+  border-style: none;        /* базове значення, перекривається нижче */
+}
+
+.sidebar {
+  border-left-style: dashed;
+  border-top-style: groove;
+  border-right-width: thin;
+}
+
+.no-border {
+  border-left-style: none;
+}
+
+/*
+   5. ПОЗИЦІЮВАННЯ ЕЛЕМЕНТІВ
+*/
+
+.site-header {
+  position: static;
+}
+
+.scroll-badge {
+  position: fixed;
+  z-index: auto;
+  top: 10px;
+  right: 10px;
+}
+
+.sidebar {
+  float: right;
+  clear: right;
+}
+
+.content {
+  float: left;
+  clear: none;
+}
+
+.hidden-block {
+  display: none;
+}
+
+.inline-tag {
+  display: inline;
+}
+
+caption.tbl-caption {
+  display: table-caption;
+}
+
+.col-demo {
+  display: table-column;
+}
+
+.tbl-footer {
+  display: table-footer-group;
+}
+
+.run-in-demo {
+  display: run-in;
+}
+
+.rtl-demo {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.site-footer {
+  direction: ltr;
+  unicode-bidi: normal;
+}
+
+/*
+   6. ВІЗУАЛІЗАЦІЯ ЕЛЕМЕНТІВ
+*/
+
+.container {
+  max-width: 900px;
+  width: 90%;
+}
+
+.content {
+  height: auto;
+  max-height: none;
+}
+
+.sidebar {
+  max-height: 600px;
+  outline-width: 2px;
+  outline-color: #e8b04a;
+}
+
+.content p {
+  line-height: normal;
+}
+
+.block h2 {
+  line-height: 130%;
+}
+
+.align-demo img {
+  vertical-align: middle;
+}
+
+.align-demo sup {
+  vertical-align: text-bottom;
+}
+
+.align-demo .baseline-el {
+  vertical-align: baseline;
+}
+
+.align-demo .top-el {
+  vertical-align: top;
+}
+
+.scrollbox {
+  overflow: hidden;
+  width: 300px;
+  height: 80px;
+}
+
+.scrollbox-visible {
+  overflow: visible;
+}
+
+.clip-demo {
+  position: fixed;
+  clip: rect(0px, 100px, 60px, 0px);
+}
+
+.invisible-el {
+  visibility: collapse;
+}
+
+.visible-el {
+  visibility: visible;
+}
+
+/*
+   7. КОЛІР ТА ФОН
+*/
+
+body {
+  background-color: #fdf3e0;
+  font-family: Georgia, serif;
+}
+
+.container {
+  background-color: #ffffff;
+}
+
+.site-header {
+  background-image: url("logo.svg");
+  background-attachment: scroll;
+  background-position: left top;
+}
+
+.block {
+  background-position: left;
+}
+
+.sidebar {
+  background-position: top;
+}
